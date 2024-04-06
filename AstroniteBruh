@@ -104,7 +104,7 @@ task.spawn(C_3);
 local function C_4()
 local script = G2L["4"];
 	
-	local power = 5000000 
+	local power = 160
 	
 	game:GetService('RunService').Stepped:connect(function()
 		game.Players.LocalPlayer.Character.Head.CanCollide = false
