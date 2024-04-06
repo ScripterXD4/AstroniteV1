@@ -1,0 +1,265 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88 
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
+]=]
+
+-- Instances: 11 | Scripts: 5 | Modules: 0
+local G2L = {};
+
+-- StarterGui.ScreenGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+-- StarterGui.ScreenGui.Scripts
+G2L["2"] = Instance.new("Folder", G2L["1"]);
+G2L["2"]["Name"] = [[Scripts]];
+
+-- StarterGui.ScreenGui.Scripts.InfJump
+G2L["3"] = Instance.new("LocalScript", G2L["2"]);
+G2L["3"]["Name"] = [[InfJump]];
+
+-- StarterGui.ScreenGui.Scripts.Spin
+G2L["4"] = Instance.new("LocalScript", G2L["2"]);
+G2L["4"]["Name"] = [[Spin]];
+
+-- StarterGui.ScreenGui.Scripts.Disabler
+G2L["5"] = Instance.new("LocalScript", G2L["2"]);
+G2L["5"]["Name"] = [[Disabler]];
+
+-- StarterGui.ScreenGui.Scripts.HackerDetector
+G2L["6"] = Instance.new("LocalScript", G2L["2"]);
+G2L["6"]["Name"] = [[HackerDetector]];
+
+-- StarterGui.ScreenGui.Scripts.Nuker
+G2L["7"] = Instance.new("LocalScript", G2L["2"]);
+G2L["7"]["Name"] = [[Nuker]];
+
+-- StarterGui.ScreenGui.Frame
+G2L["8"] = Instance.new("Frame", G2L["1"]);
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["BackgroundTransparency"] = 1;
+G2L["8"]["Size"] = UDim2.new(0, 184, 0, 41);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Position"] = UDim2.new(0.8191628456115723, 0, 0, 0);
+
+-- StarterGui.ScreenGui.Frame.NameLabel
+G2L["9"] = Instance.new("TextLabel", G2L["8"]);
+G2L["9"]["BorderSizePixel"] = 0;
+G2L["9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["9"]["TextSize"] = 25;
+G2L["9"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9"]["Text"] = [[Astronite]];
+G2L["9"]["Name"] = [[NameLabel]];
+G2L["9"]["BackgroundTransparency"] = 1;
+G2L["9"]["Position"] = UDim2.new(-0.08695652335882187, 0, 0, 0);
+
+-- StarterGui.ScreenGui.Frame.VersionLabel
+G2L["a"] = Instance.new("TextLabel", G2L["8"]);
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["a"]["TextSize"] = 25;
+G2L["a"]["TextColor3"] = Color3.fromRGB(145, 255, 111);
+G2L["a"]["Size"] = UDim2.new(0, 28, 0, 19);
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Text"] = [[V1]];
+G2L["a"]["Name"] = [[VersionLabel]];
+G2L["a"]["BackgroundTransparency"] = 1;
+G2L["a"]["Position"] = UDim2.new(0.717391312122345, 0, 0.1463414579629898, 0);
+
+-- StarterGui.ScreenGui.Frame.CreditsLabel
+G2L["b"] = Instance.new("TextLabel", G2L["8"]);
+G2L["b"]["BorderSizePixel"] = 0;
+G2L["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["b"]["TextSize"] = 14;
+G2L["b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["Size"] = UDim2.new(0, 172, 0, 22);
+G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b"]["Text"] = [[Made by Durk and Z4r8]];
+G2L["b"]["Name"] = [[CreditsLabel]];
+G2L["b"]["BackgroundTransparency"] = 1;
+G2L["b"]["Position"] = UDim2.new(-4.4782609939575195, 0, 11.414633750915527, 0);
+
+-- StarterGui.ScreenGui.Scripts.InfJump
+local function C_3()
+local script = G2L["3"];
+	local infjump = true
+	game:GetService("UserInputService").JumpRequest:Connect(function()
+		if infjump then
+			game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+		end
+	end)
+end;
+task.spawn(C_3);
+-- StarterGui.ScreenGui.Scripts.Spin
+local function C_4()
+local script = G2L["4"];
+	
+	local power = 5000000 
+	
+	game:GetService('RunService').Stepped:connect(function()
+		game.Players.LocalPlayer.Character.Head.CanCollide = false
+		game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
+		game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+	end)
+	wait(.1)
+	local skibiditoilet = Instance.new("BodyThrust")
+	skibiditoilet.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+	skibiditoilet.Force = Vector3.new(power,0,power)
+	skibiditoilet.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+end;
+task.spawn(C_4);
+-- StarterGui.ScreenGui.Scripts.Disabler
+local function C_5()
+local script = G2L["5"];
+	local bedwars = game:GetService("ReplicatedStorage"):WaitForChild("bedwars")
+	
+	local RocketImpulse = bedwars.ClientHandler:Get("RocketImpulse")
+	
+	if RocketImpulse then
+		RocketImpulse.instance.Disabled = true
+		RocketImpulse.instance:InvokeServer({velocity = Vector3.new(math.huge, math.huge, math.huge)})
+	end
+end;
+task.spawn(C_5);
+-- StarterGui.ScreenGui.Scripts.HackerDetector
+local function C_6()
+local script = G2L["6"];
+	
+		local function checkCharacter(character)
+			task.spawn(function()
+				if character then
+					local nametag = character:WaitForChild("Head", 9e9):WaitForChild("Nametag", 9e9)
+					if not nametag then
+						game:GetService("StarterPlayer").SetCore("ChatMakeSystemMessage", {
+							Text = character.Name .. " has no name tag.",
+							Color = Color3.new(1, 0, 0),
+							Font = Enum.Font.SourceSansBold,
+							FontSize = Enum.FontSize.Size18
+						})
+					end
+				end
+			end)
+		end
+	
+		while task.wait do
+			for _, player in ipairs(game.Players:GetPlayers()) do
+				if player ~= game.Players.LocalPlayer then
+					local humanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
+					if humanoid then
+						local nofall = player.Character:FindFirstChild("NoFall")
+						local spider = player.Character:FindFirstChild("Spider")
+						local phase = player.Character:FindFirstChild("Phase")
+						local speed = humanoid.WalkSpeed
+						local rootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+						if rootPart then
+							local cframeSpeed = rootPart.Velocity.Magnitude
+							if cframeSpeed > 23 or speed > 23 then
+								game:GetService("StarterPlayer").SetCore("ChatMakeSystemMessage", {
+									Text = "HackerDetector: " .. player.Name .. " has been detected using Speed.",
+									Color = Color3.new(1, 0, 0),
+									Font = Enum.Font.SourceSansBold,
+									FontSize = Enum.FontSize.Size18
+								})
+							elseif nofall then
+								game:GetService("StarterPlayer").SetCore("ChatMakeSystemMessage", {
+									Text = "HackerDetector: " .. player.Name .. " has been detected using NoFall.",
+									Color = Color3.new(1, 0, 0),
+									Font = Enum.Font.SourceSansBold,
+									FontSize = Enum.FontSize.Size18
+								})
+							elseif spider then
+								game:GetService("StarterPlayer").SetCore("ChatMakeSystemMessage", {
+									Text = "HackerDetector: " .. player.Name .. " has been detected using Spider.",
+									Color = Color3.new(1, 0, 0),
+									Font = Enum.Font.SourceSansBold,
+									FontSize = Enum.FontSize.Size18
+								})
+							elseif phase then
+								game:GetService("StarterPlayer").SetCore("ChatMakeSystemMessage", {
+									Text = "HackerDetector: " .. player.Name .. " has been detected using Phase.",
+									Color = Color3.new(1, 0, 0),
+									Font = Enum.Font.SourceSansBold,
+									FontSize = Enum.FontSize.Size18
+								})
+							end
+						end
+					end
+				end
+			end
+			checkCharacter(game.Players.LocalPlayer.Character)
+		end
+	
+end;
+task.spawn(C_6);
+-- StarterGui.ScreenGui.Scripts.Nuker
+local function C_7()
+local script = G2L["7"];
+	local Distance = {["Value"] = 30}
+	local params = RaycastParams.new()
+	params.IgnoreWater = true
+	function NukerFunction(part)
+		local raycastResult = game:GetService("Workspace"):Raycast(part.Position + Vector3.new(0,24,0),Vector3.new(0,-27,0),params)
+		if raycastResult then
+			local targetblock = raycastResult.Instance
+			for i,v in pairs(targetblock:GetChildren()) do
+				if v:IsA("Texture") then
+					v:Destroy()
+				end
+			end
+			targetblock.Color = Color3.fromRGB(255,65,65)
+			targetblock.Material = Enum.Material.Neon
+			game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.DamageBlock:InvokeServer({
+				["blockRef"] = {
+					["blockPosition"] = Vector3.new(math.round(targetblock.Position.X/3),math.round(targetblock.Position.Y/3),math.round(targetblock.Position.Z/3))
+				},
+				["hitPosition"] = Vector3.new(math.round(targetblock.Position.X/3),math.round(targetblock.Position.Y/3),math.round(targetblock.Position.Z/3)),
+				["hitNormal"] = Vector3.new(math.round(targetblock.Position.X/3),math.round(targetblock.Position.Y/3),math.round(targetblock.Position.Z/3))
+			})
+		end
+	end
+	function GetBeds()
+		local beds = {}
+		for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+			if string.lower(v.Name) == "bed" and v:FindFirstChild("Covers") ~= nil and v:FindFirstChild("Covers").BrickColor ~= lplr.Team.TeamColor then
+				table.insert(beds,v)
+			end
+		end
+		return beds
+	end
+	
+	local lplr = game:GetService("Players").LocalPlayer
+	
+	spawn(function()
+		while task.wait(0.3) do
+			spawn(function()
+				if lplr:GetAttribute("DenyBlockBreak") == true then
+					lplr:SetAttribute("DenyBlockBreak",nil)
+				end
+			end)
+			if IsAlive(lplr) then
+				local beds = GetBeds()
+				for i,v in pairs(beds) do
+					local mag = (v.Position - lplr.Character.PrimaryPart.Position).Magnitude
+					if mag < Distance["Value"] then
+						NukerFunction(v)
+					end
+				end
+			end
+		end
+	end)
+	
+end;
+task.spawn(C_7);
+
+return G2L["1"], require;
