@@ -103,20 +103,7 @@ task.spawn(C_3);
 -- StarterGui.ScreenGui.Scripts.Spin
 local function C_4()
 local script = G2L["4"];
-	
-	local power = 160
-	
-	game:GetService('RunService').Stepped:connect(function()
-		game.Players.LocalPlayer.Character.Head.CanCollide = false
-		game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
-		game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
-	end)
-	wait(.1)
-	local skibiditoilet = Instance.new("BodyThrust")
-	skibiditoilet.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
-	skibiditoilet.Force = Vector3.new(power,0,power)
-	skibiditoilet.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+	print("Spin is discontinued, it lags people out LOL")
 end;
 task.spawn(C_4);
 -- StarterGui.ScreenGui.Scripts.Disabler
@@ -152,7 +139,7 @@ local script = G2L["6"];
 			end)
 		end
 	
-		while task.wait do
+		while task.wait(0.1) do
 			for _, player in ipairs(game.Players:GetPlayers()) do
 				if player ~= game.Players.LocalPlayer then
 					local humanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
